@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Prueba1</string>
+    <string name="texto_incio">Mi App</string>
+    <string name="texto_hito3">Texto Introducido</string>
+    <string name="texto_2">Adios</string>
+    <string name="boton_inicio">Pulsa para continuar</string>
+    <string name="edit_text">Introduce aqui</string>
+    <string name="edit_text_1">EditText</string>
 </resources>

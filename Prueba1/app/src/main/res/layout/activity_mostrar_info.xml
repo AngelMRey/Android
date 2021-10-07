@@ -5,53 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
     android:background="@color/dark_blue"
-    tools:context=".MainActivity">
+    android:layout_gravity="center"
+    tools:context=".MostrarInfo">
 
     <TextView
-        android:id="@+id/textoInicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:textStyle="bold"
         android:padding="10dp"
         android:textColor="@color/orange"
-        android:text="@string/texto_incio"
+        android:text="@string/texto_hito3"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/imagen2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/imagenprueba2"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:id="@+id/resultadoIntent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_2"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginTop="70dp"
         android:textSize="50sp"
         />
 
     <ImageView
-        android:id="@+id/imagen1"
+        android:id="@+id/imagen3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/imagenprueba2"
-        />
-
-    <EditText
-        android:id="@+id/editText"
-        android:hint="@string/edit_text"
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:textColorHint="@color/orange"
-        android:textSize="30sp"
-
-        />
-
-
-    <Button
-        android:id="@+id/botonInicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/boton_inicio"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/grey_2"
-        android:textSize="20sp"
+        android:src="@drawable/imagen3"
+        android:layout_marginTop="200dp"
         />
 
 </LinearLayout>
