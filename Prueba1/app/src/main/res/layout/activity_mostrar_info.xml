@@ -5,46 +5,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/dark_blue"
+    android:background="@color/grey_1"
     android:layout_gravity="center"
     tools:context=".MostrarInfo">
 
     <TextView
+        android:id="@+id/texto_mostrardatos"
+        android:fontFamily="@font/anton_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:textColor="@color/orange"
-        android:text="@string/texto_hito3"
-        android:textSize="50sp" />
+       android:gravity="center"
+        android:text="@string/encabezado_mostrarinfo"
+        android:background="@color/grey_4"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        />
 
     <ImageView
         android:id="@+id/imagen2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/imagenprueba2"
-        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="245dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginRight="150dp"
+        android:src="@drawable/logo_android_studio"
+
         />
 
     <TextView
-        android:id="@+id/resultadoIntent"
+        android:id="@+id/nombre_user"
+        android:text="@string/nombre"
+        android:fontFamily="@font/teko_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey_2"
-        android:textColor="@color/orange"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_marginTop="70dp"
-        android:textSize="50sp"
+        android:background="@color/grey_0"
+        android:textColor="@color/black"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="30sp"
         />
 
-    <ImageView
-        android:id="@+id/imagen3"
+    <TextView
+        android:id="@+id/apellidos_user"
+        android:text="@string/apellidos"
+        android:fontFamily="@font/teko_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/imagen3"
-        android:layout_marginTop="200dp"
+        android:background="@color/grey_0"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="30sp"
         />
+
+    <TextView
+        android:id="@+id/numero_user"
+        android:text="@string/numero"
+        android:fontFamily="@font/teko_regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_0"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/email_user"
+        android:text="@string/email"
+        android:fontFamily="@font/teko_regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_0"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="30sp"
+        />
+
+
+
 
 </LinearLayout>

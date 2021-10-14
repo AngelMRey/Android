@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,16 +20,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button boton = findViewById(R.id.botonInicio);
-        EditText aniadirTexto = findViewById(R.id.editText);
+        EditText nombreEditText = findViewById(R.id.nombre);
+        EditText apelllidosEditText = findViewById(R.id.apellidos);
+        EditText numeroEditText = findViewById(R.id.numero);
+        EditText emailEditText = findViewById(R.id.email);
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String introducirTexto = aniadirTexto.getText().toString();
-                //Buscar info de intent en android
+                Usuario usuario = new Usuario(nombreEditText.getText().toString(), apelllidosEditText.getText().toString(), Integer.parseInt(numeroEditText.getText().toString()), emailEditText.getText().toString());
+
                 Intent intent = new Intent(MainActivity.this, MostrarInfo.class);
-                intent.putExtra("introducir", introducirTexto);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
         });

@@ -14,9 +14,18 @@ public class MostrarInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_info);
 
-        Intent intent = getIntent();
-        String introducirTexto = intent.getStringExtra("introducir");
+        TextView nombreUser = findViewById(R.id.nombre_user);
+        TextView apellidosUser = findViewById(R.id.apellidos_user);
+        TextView numeroUser = findViewById(R.id.numero_user);
+        TextView emailUser = findViewById(R.id.email_user);
 
-        TextView mostrarTexto = findViewById(R.id.resultadoIntent);
+        Intent intent = getIntent();
+
+        Usuario usuario = (Usuario) intent.getSerializableExtra("usuario");
+
+        nombreUser.setText(usuario.getNombre());
+        apellidosUser.setText(usuario.getApellidos());
+        numeroUser.setText(usuario.getNumero());
+        emailUser.setText(usuario.getEmail());
     }
 }

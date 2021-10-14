@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    //color hunt para paleta de colores
-    //colores accesibles, por ej que puedan ver también los daltonicos
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -10,8 +9,12 @@
     //Paleta colores provisional app
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="orange">#F0A500</color>
-    <color name="grey_2">#334756</color>
-    <color name="grey_1">#9b9b9b</color>
-    <color name="dark_blue">#082032</color>
+    <color name="grey_0">#F9F3F3</color>
+    <color name="grey_1">#E9E9E5</color>
+    <color name="grey_2">#DDDDDD</color>
+    <color name="grey_3">#D4D6C8</color>
+    <color name="grey_4">#9A9B94</color>
+    <color name="grey_5">#C8C6A7</color>
+    <color name="grey_6">#92967D</color>
+    <color name="grey_7">#52524E</color>
 </resources>

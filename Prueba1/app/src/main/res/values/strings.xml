@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">Prueba1</string>
-    <string name="texto_incio">Mi App</string>
-    <string name="texto_hito3">Texto Introducido</string>
-    <string name="texto_2">Adios</string>
-    <string name="boton_inicio">Pulsa para continuar</string>
-    <string name="edit_text">Introduce aqui</string>
-    <string name="edit_text_1">EditText</string>
+    <string name="app_name">MiApp</string>
+    <!---Inicio-->
+    <string name="encabezado_inicio">Datos</string>
+    <string name="nombre">Nombre: </string>
+    <string name="apellidos">Apellidos: </string>
+    <string name="numero">Numero: </string>
+    <string name="email">Email: </string>
+    <string name="boton_inicio">Guardar datos</string>
+    <!---Mostrar info-->
+    <string name="encabezado_mostrarinfo">Datos del Usuario</string>
+    <!---Uso de nombre, apellidos, numero e email de inicio-->
 </resources>
