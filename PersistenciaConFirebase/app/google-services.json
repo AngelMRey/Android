@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035336046655",
+    "project_id": "persistenciaconfirebase",
+    "storage_bucket": "persistenciaconfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035336046655:android:51ec74c3f75ebb9af3c08a",
+        "android_client_info": {
+          "package_name": "com.example.persistenciaconfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035336046655-u6lnvhh2is9rre07c9dqt6sskvr944lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVFoF-BeUEGtXndVH8Rff74e2F9pV5yng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035336046655-u6lnvhh2is9rre07c9dqt6sskvr944lh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
