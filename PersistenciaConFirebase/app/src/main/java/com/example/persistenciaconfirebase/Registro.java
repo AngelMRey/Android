@@ -22,7 +22,10 @@ public class Registro extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference myRef;
+
+    private EditText nombreUsuario, correoUsuario, contraUsuario, confirmacionContra;
+    private Button botonRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +33,27 @@ public class Registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
 
         mAuth = FirebaseAuth.getInstance();
+        myRef = FirebaseDatabase.getInstance().getReference();
 
-        EditText correoUsuario = findViewById(R.id.correo_registro);
-        EditText contraUsuario = findViewById(R.id.contra_registro);
-        EditText confirmacionContra = findViewById(R.id.comfirmar_contra_registro);
-        Button botonRegistro = findViewById(R.id.registrarse);
+        nombreUsuario = findViewById(R.id.nombre_usuario);
+        correoUsuario = findViewById(R.id.correo_registro);
+        contraUsuario = findViewById(R.id.contra_registro);
+        confirmacionContra = findViewById(R.id.confirmar_contra_registro);
+        botonRegistro = findViewById(R.id.registrarse);
 
         botonRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (confirmacionContra.getText().toString().equals(contraUsuario.getText().toString()) && contraUsuario.getText().toString().length() >= 8){
-                    registrarUsuario(correoUsuario.getText().toString(), contraUsuario.getText().toString());
-                    Intent intent = new Intent(Registro.this, Inicio.class);
-                    startActivity(intent);
+                if (!nombreUsuario.toString().isEmpty() && !correoUsuario.toString().isEmpty() && !contraUsuario.toString().isEmpty() && !confirmacionContra.toString().isEmpty()) {
+                    if (confirmacionContra.getText().toString().equals(contraUsuario.getText().toString()) && contraUsuario.getText().toString().length() >= 8) {
+                        registrarUsuario(correoUsuario.getText().toString(), contraUsuario.getText().toString());
+                        Intent intent = new Intent(Registro.this, Inicio.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(Registro.this, "Error, fallo en el registro", Toast.LENGTH_LONG).show();
+                    }
                 } else {
-                    Toast.makeText(Registro.this, "Error, fallo en el registro", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Registro.this, "Error, algun campo esta vacio", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -59,8 +67,10 @@ public class Registro extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(Registro.this, "Registro realizado con éxito", Toast.LENGTH_LONG).show();
                         FirebaseUser user = mAuth.getCurrentUser();
+
                         try {
-                            aniadirNuevoUsuario(user.getUid(), correo, contra);
+                            Usuario usuario = new Usuario(nombreUsuario.getText().toString(), correo, contra);
+                            myRef.child("Usuarios").child(user.getUid()).setValue(usuario.aniadirUsuarioBaseDatos());
                         } catch (Exception e){
                             System.out.println(e.getMessage());
                         }
@@ -73,11 +83,5 @@ public class Registro extends AppCompatActivity {
                         Toast.makeText(Registro.this, "Error en el registro", Toast.LENGTH_LONG).show();
                     }
                 });
-    }
-
-    public void aniadirNuevoUsuario(String uid, String correo, String contra){
-        Usuario usuario = new Usuario(correo, contra);
-
-        myRef.child("Usuarios").child(uid).setValue(usuario);
     }
 }

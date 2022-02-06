@@ -1,34 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro">
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    tools:context=".Registro"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Registro"
+        android:textSize="30sp"
+        android:layout_marginBottom="70dp"/>
+
+    <EditText
+        android:id="@+id/nombre_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nombre de usuario"
+        android:textAlignment="center"
+        android:layout_below="@id/register"/>
 
     <EditText
         android:id="@+id/correo_registro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="correo"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/nombre_usuario"/>
 
     <EditText
         android:id="@+id/contra_registro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="contraseña"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/correo_registro"/>
 
     <EditText
-        android:id="@+id/comfirmar_contra_registro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/confirmar_contra_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="confirmar contraseña"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/contra_registro"/>
 
     <Button
         android:id="@+id/registrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@id/confirmar_contra_registro"/>
 
-</LinearLayout>
+</RelativeLayout>

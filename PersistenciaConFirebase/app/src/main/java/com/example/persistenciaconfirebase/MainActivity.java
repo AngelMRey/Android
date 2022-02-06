@@ -20,10 +20,16 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference myRef;
+
+    private Usuario usuarioActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+        myRef = FirebaseDatabase.getInstance().getReference();
 
         EditText correoUsuario = findViewById(R.id.correo_login);
         EditText contraUsuario = findViewById(R.id.contra_login);
@@ -67,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void inicarSesion(String correo, String contra) {
         mAuth.signInWithEmailAndPassword(correo, contra)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -74,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(MainActivity.this, "Sesion iniciada correctamente", Toast.LENGTH_LONG).show();
                         FirebaseUser user = mAuth.getCurrentUser();
+                        Intent intent = new Intent(MainActivity.this, Inicio.class);
+                        intent.putExtra("uid", user.getUid());
+                        startActivity(intent);
                     }
                 })
 
