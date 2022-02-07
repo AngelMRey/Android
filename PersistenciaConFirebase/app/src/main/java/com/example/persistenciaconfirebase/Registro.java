@@ -70,7 +70,7 @@ public class Registro extends AppCompatActivity {
 
                         try {
                             Usuario usuario = new Usuario(nombreUsuario.getText().toString(), correo, contra);
-                            myRef.child("Usuarios").child(user.getUid()).setValue(usuario.aniadirUsuarioBaseDatos());
+                            myRef.child("Usuarios").child(user.getUid()).setValue(usuario);
                         } catch (Exception e){
                             System.out.println(e.getMessage());
                         }

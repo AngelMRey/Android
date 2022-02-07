@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Sesion iniciada correctamente", Toast.LENGTH_LONG).show();
                         FirebaseUser user = mAuth.getCurrentUser();
                         Intent intent = new Intent(MainActivity.this, Inicio.class);
-                        intent.putExtra("uid", user.getUid());
                         startActivity(intent);
                     }
                 })

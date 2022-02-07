@@ -30,16 +30,13 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        Intent intent = getIntent();
-        String uid = (String) intent.getSerializableExtra("uid");
-
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         myRef = FirebaseDatabase.getInstance().getReference();
 
         mensajeBienvenida = findViewById(R.id.mensaje_bienvenida);
 
-        myRef.child(uid).addValueEventListener(new ValueEventListener() {
+        myRef.child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

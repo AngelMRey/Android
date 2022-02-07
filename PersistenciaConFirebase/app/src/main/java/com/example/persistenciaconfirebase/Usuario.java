@@ -18,14 +18,4 @@ public class Usuario implements Serializable {
         this.correo = correo;
         this.contrasenia = contrasenia;
     }
-
-    public Map<String, Object> aniadirUsuarioBaseDatos (){
-        Map <String, Object> map = new HashMap<>();
-
-        map.put("usuario", nombre);
-        map.put("correo", correo);
-        map.put("contraseña", contrasenia);
-
-        return map;
-    }
 }
